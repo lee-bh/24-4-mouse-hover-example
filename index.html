@@ -1,0 +1,69 @@
+<DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+<style>
+body,h4,h5,p,a,ul{margin: 0; padding: 0}
+.wrap{width: 800px; margin:auto}
+.flex{display: flex;}
+
+/*먼저 a태그를 박스처럼써서 3개를 만들면 간편함
+a태그를 박스로 쓰려면 일단 display:block을 걸고
+그다음 포지션 relative 그리고 사이즈 지정*/
+.bg_f{display:block;position:relative;width: 33.3%; height: 400px; }
+
+/*먼저 바닥에 깔리는 이미지는 밑에 글자가 와야되므로 absolute말고 그냥*/
+.bg_f img{width: 100%; height: auto;}
+
+/*오버랩 이미지는 absolute라서 폭과 높이를 지정해줘야함*/
+.r{position: absolute; left:0px; top:0px; width: 266px; height: auto;}
+
+/*여기서 3개의 클래스 이름을 따로줘야 각각 호버가 따로 작동*/
+.item1:hover .r{display: none} /*호버하면 그 안에 r을 안보이게*/
+.item2:hover .r{display: none}
+.item3:hover .r{display: none}
+
+</style>
+
+</head>
+<body>
+
+<section>
+<div class="wrap"><!--먼저 제목이 온다. good -->
+  <h4>자석을 들고 다니기 부담스러운 당신에게</h4>
+</div>
+<!-- 여기서부터 3개 가로로 시작 그안에 a태그박스넣어서 링크걸 수 있게 -->
+<div class="wrap flex">
+
+  <a class="bg_f item1"> <!--아이템1 -->
+        <img src="op.jpg"> <!--바닥이미지 -->
+        <img class="r" src="overlap.jpg"> <!--오버랩이미지 absolute -->
+        <h5>귀걸이</h5> <!--타이틀 -->
+  </a>
+
+  <a class="bg_f item2"> <!--아이템2 -->
+        <img src="op.jpg">
+        <img class="r" src="overlap.jpg">
+        <h5>귀걸이</h5>
+  </a>
+
+  <a class="bg_f item3"> <!--아이템3 -->  
+        <img src="op.jpg">
+        <img class="r" src="overlap.jpg"> 
+        <h5>귀걸이</h5>
+  </a>
+</div><!-- 여기 끝나는 div 없는데 막아줘야함  -->
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
